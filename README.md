@@ -4,49 +4,50 @@
 
 > A slush generator to scaffold MEAN Apps
 
-## * * This project is no longer under active maintenance, if anyone is interested to manage this, please reach out to me. * *
+## ** Этот проект больше не находится под активным обслуживанием, если кто-то заинтересован в управлении этим, пожалуйста, свяжитесь со мной **
 
-Inspired by [MEAN](http://meanjs.org/)
+Вдохновленный [MEAN](http://meanjs.org/)
 
-## Getting Started
+## Начало работы
 
-### Installation
+### Установка
 
-Install `slush-meanjs` globally:
+Установка `slush-meanjs` глобально:
 
 ```bash
 $ npm install -g slush-meanjs
 ```
 
-Remember to install `gulp` and `slush` globally as well, if you haven't already:
+Не забудьте также установить `gulp` и` slush` глобально, если вы этого еще не сделали:
 
 ```bash
 $ npm install -g gulp slush
 ```
 
-### Usage
+### Использование
 
-Create a new folder for your project:
+Создайте новую папку для вашего проекта:
 
 ```bash
 $ mkdir my-slush-meanjs
 ```
 
-Run the generator from within the new folder:
+Запустите генератор из новой папки:
 
 ```bash
 $ cd my-slush-meanjs && slush meanjs
 ```
-## Run the app 
+## Запуск приложения
 
-To run the app , first make sure mongoDB is running (```$ mongod```) then
+Чтобы запустить приложение, сначала убедитесь, что mongoDB запущен (```$ mongod```), затем
 
 ```bash
-$ gulp 
+$ gulp
 ```
-and navigate to ```http://localhost:3000```
+и перейдите к ```http://localhost:3000```
 
-To generate minified js & css files inside the `public/dist` folder, run
+
+Чтобы сгенерировать минимизированные файлы js & css в папке `public / dist`, запустите
 
 ```bash
 $ gulp build
@@ -58,7 +59,7 @@ To lint files
 $ gulp lint
 ```
 
-To run tests
+Запуск тестов
 
 ```bash
 $ gulp test
@@ -132,262 +133,207 @@ $ gulp test
 </tr>
 </table>
 
-**Note: Generators are to be run from the root directory of your app.**
+**Примечание. Генераторы должны запускаться из корневого каталога вашего приложения (app).**
 
 ## Application Generator
 
-The application generator will help you create a fresh copy of a MEAN.JS application in your working folder. To create your MEAN application, navigate to a new project folder, and then use *slush meanjs* to generate your application:
-
+Генератор приложений поможет вам создать свежую копию приложения MEAN.JS в вашей рабочей папке. Чтобы создать приложение MEAN, перейдите в новую папку проекта, а затем используйте *slush meanjs* для создания приложения:
 
 ```
 $ slush meanjs
 ```
-
-The generator will ask you a few questions about your new application and will generate it for you. When the installation process is over, you will be able to use gulp to run your new MEAN application:
-
+Генератор задаст вам несколько вопросов о вашем новом приложении и сгенерирует его для вас. Когда процесс установки закончится, вы сможете использовать gulp для запуска вашего нового приложения MEAN:
 
 ```
 $ gulp
 ```
-
-Now, the application generator does a great job scaffolding a whole application, but daily work requires us to repeat a lot of structured code. For this purpose we provided you with some sub-generators to help you speed up your development.
-
-
+Теперь генератор приложений отлично справляется с работой по созданию целого приложения, но ежедневная работа требует от нас повторения большого количества структурированного кода. Для этой цели мы предоставили вам несколько sub-generator, которые помогут вам ускорить разработку.
 
 ## CRUD Module Sub-Generator
 
-The CRUD module sub-generator will help you create a new CRUD module, similar to the article sample provided with the project. To create a new CRUD module you will need to use *slush meanjs* again:
-
-
+Sub-generator модуля CRUD поможет вам создать новый модуль CRUD, подобный примеру статьи, поставляемому с проектом. Для создания нового модуля CRUD вам нужно будет снова использовать *slush meanjs* :
 ```
 $ slush meanjs:crud-module <module-name>
 ```
+Это создаст файлы AngularJS и Express, поддерживающие полную функциональность CRUD, и добавит тесты Karma и Mocha.
 
-This will create both AngularJS and Express files supporting full CRUD functionality, and add the Karma and Mocha tests.
-
-
-**Note:** Don’t forget to use your module name as an argument when calling the CRUD module sub-generator.
-
+**Примечание:** Не забудьте использовать имя вашего модуля в качестве аргумента при вызове sub-generator модуля CRUD.
 
 
 ## AngularJS Module Sub-Generator
 
-Another redundant task is creating a new AngularJS module structure. For this purpose you can use the Angular module sub-generator. It will create the proper folder structure for you and the module initialization file. Creating a new AngularJS module is simple:
-
+Другая избыточная задача - создание новой структуры модуля AngularJS. Для этого вы можете использовать Angular генератор sub-generator. Это создаст правильную структуру папок для вас и файла инициализации модуля. Создать новый модуль AngularJS просто:
 
 ```
 $ slush meanjs:angular-module <module-name>
 ```
 
-The sub-generator will ask for more information about your folder structure, and will create the empty new AngularJS module. Now, to fill that new module with your business logic, we provided you with several AngularJS entities sub-generators.
-
+Sub-generator запросит дополнительную информацию о структуре вашей папки и создаст пустой новый модуль AngularJS. Теперь, чтобы заполнить этот новый модуль вашей бизнес-логикой, мы предоставили вам несколько sub-generator сущностей AngularJS.
 
 
 ## AngularJS Route Sub-Generator
 
-To construct your module you will often need to create a new route. The AngularJS route sub-generator will help you create a view, controller and a proper route in your module **routes.js** file. If it can’t find the module routes file the sub-generator will create one for you. Creating a new AngularJS route will involve executing this command:
-
+Для создания вашего модуля вам часто нужно будет создать новый маршрут. Sub-generator маршрутов AngularJS поможет вам создать представление, контроллер и правильный маршрут в файле вашего модуля **rout.js**. Если он не может найти файл маршрутов модуля, sub-generator создаст его для вас. Создание нового маршрута AngularJS потребует выполнения этой команды:
 
 
 ```
 $ slush meanjs:angular-route <route-name>
 ```
 
-The sub-generator will ask for more information about your controller, view and routing URL, and will generate the appropriate files for you.
-
+Sub-generator запросит дополнительную информацию о вашем контроллере, просмотре и маршрутизации URL и сгенерирует соответствующие файлы для вас.
 
 
 ## AngularJS Controller Sub-Generator
 
-The AngularJS Controller sub-generator will create a new AngularJS controller in the specified module's **controllers** folder. To create a new AngularJS controller run *slush meanjs* again by using this command:
-
+Sub-generator AngularJS Controller создаст новый контроллер AngularJS в папке **controllers** модуля. Чтобы создать новый контроллер AngularJS, снова запустите *slush meanjs* с помощью этой команды:
 
 ```
 $ slush meanjs:angular-controller <controller-name>
 ```
 
-The sub-generator will ask you for the module name under which you would like to create your new controller, and will create a new AngularJS controller file in that module **controllers** folder and a test file in the **tests** folder.
+Sub-generator запросит у вас имя модуля, под которым вы хотели бы создать новый контроллер, и создаст новый файл контроллера AngularJS в этой папке **controllers** модуля и тестовый файл в **tests** папки.
 
-
-**Don’t forget!** This time you pass the controller name as an argument. 
-
-
+**Не забывайте!** На этот раз вы передаете имя контроллера в качестве аргумента.
 
 ## AngularJS View Sub-Generator
 
-Once you have your controller file ready, you may want to add a view that makes use of this controller. The AngularJS view sub-generator will create a new AngularJS view in the specified module's **views** folder, and will allow you to add a route definition for it. To create a new AngularJS view you will need to execute this command:
-
+Как только у вас есть готовый файл контроллера, вы можете захотеть добавить представление, которое использует этот контроллер. Sub-generator представлений AngularJS создаст новое представление AngularJS в папке **views** указанного модуля и позволит вам добавить для него определение маршрута. Для создания нового представления AngularJS вам необходимо выполнить эту команду:
 
 ```
 $ slush meanjs:angular-view <view-name>
 ```
 
-The sub-generator will ask you for the module name under which you would like to create your new view, and some additional routing information. It will then create a new view file in that module's **views** folder and add a routing state to the module **routes.js** file. If it can’t find the module routes file it will create one for you.
-
+Sub-generator запросит у вас имя модуля, под которым вы хотели бы создать новый вид, и некоторую дополнительную информацию о маршрутизации. Затем он создаст новый файл представления в папке **views** этого модуля и добавит состояние маршрутизации к файлу модуля **rout.js**. Если он не может найти файл маршрутов модуля, он создаст его для вас.
 
 
 ## AngularJS Service Sub-Generator
 
-The AngularJS service sub-generator will create a new AngularJS service in the specified module's **services** folder. To create a new AngularJS service you will need to execute this command:
-
+Sub-generator службы AngularJS создаст новую службу AngularJS в папке **services** указанного модуля. Чтобы создать новый сервис AngularJS, вам нужно выполнить эту команду:
 
 ```
 $ slush meanjs:angular-service <service-name>
 ```
 
-The sub-generator will ask you for the module name under which you would like to create your new service, and will create a new AngularJS service file in that module's **services** folder.
-
-
+Sub-generator запросит у вас имя модуля, под которым вы хотите создать новую службу, и создаст новый файл службы AngularJS в папке **services** этого модуля.
 
 ## AngularJS Directive Sub-Generator
 
-The AngularJS directive sub-generator will create a new AngularJS directive in the specified module's **directives** folder. Creating a new AngularJS directive should already look familiar:
-
+Sub-generator директивы AngularJS создаст новую директиву AngularJS в папке **directives**. Создание новой директивы AngularJS уже должно выглядеть знакомо:
 
 ```
 $ slush meanjs:angular-directive <directive-name>
 ```
 
-The sub-generator will ask you for the module name under which you would like to create your new directive, and will create a new AngularJS directive file in that module's **directives** folder.
-
-
+Sub-generator запросит у вас имя модуля, под которым вы хотели бы создать новую директиву, и создаст новый файл директивы AngularJS в папке **directives**.
 
 ## AngularJS Filter Sub-Generator
 
-The AngularJS filter sub-generator will create a new AngularJS filter in a specified module's **filters** folder. To create a new AngularJS filter you need to call *slush meanjs* again:
-
+Генератор фильтров AngularJS создаст новый фильтр AngularJS в папке **filters** указанного модуля. Чтобы создать новый фильтр AngularJS, вам нужно снова вызвать *slush meanjs*:
 
 ```
 $ slush meanjs:angular-filter <filter-name>
 ```
 
-The sub-generator will ask you for the module name under which you would like to create your new filter, and will create a new AngularJS filter file in that module **filters** folder.
-
+Sub-generator запросит у вас имя модуля, под которым вы хотите создать новый фильтр, и создаст новый файл фильтра AngularJS в папке этого модуля **filters**.
 
 
 ## AngularJS Config Sub-Generator
 
-The AngularJS config sub-generator will create a new AngularJS config section in a specified module's **config** folder. To create a new AngularJS config file just call *slush meanjs*:
 
-
+Конфигурационный sub-generator AngularJS создаст новый раздел конфигурации AngularJS в папке **config** указанного модуля. Чтобы создать новый конфигурационный файл AngularJS, просто вызовите *slush meanjs*:
 ```
 $ slush meanjs:angular-config <config-name>
 ```
 
-The sub-generator will ask you for the module name under which you would like to create your new config, and will create a new AngularJS config file in that module's **config** folder.
-
-
+Sub-generator запросит у вас имя модуля, под которым вы хотите создать новую конфигурацию, и создаст новый файл конфигурации AngularJS в папке **config** этого модуля.
 
 ## AngularJS Test Sub-Generator
 
-Your MEAN application comes pre-bundled with the Karma test runner and Jasmine testing framework. To test your AngularJS controllers you’ll need to create a test file, which Karma will later use to run the tests. For this purpose we provided you with the AngularJS test sub-generator. Creating a new AngularJS test is effortless, just execute this command:
-
+Ваше MEAN-приложение поставляется с предустановленным тестером Karma и средой тестирования Jasmine. Для тестирования ваших контроллеров AngularJS вам необходимо создать тестовый файл, который Karma позже будет использовать для запуска тестов. Для этого мы предоставили вам тестовый sub-generator AngularJS. Создать новый тест AngularJS легко, просто выполните эту команду:
 
 ```
 $ slush meanjs:angular-test <controller-name>
 ```
 
-This will create a test file for your controller, and if the sub-generator doesn’t find the specified controller file, it will create one for you.
+Это создаст тестовый файл для вашего контроллера, и если sub-generator не найдет указанный файл контроллера, он создаст его для вас.
 
 
-**Don’t forget!** You're suppose to pass the controller name as an argument. 
-
-
+**Не забывайте!** Вы должны передать имя контроллера в качестве аргумента.
 
 ## Express Model Sub-Generator
 
-Often you will find the need to just create a single Express model. The Express model sub-generator will help you with creating an Express model in the **app/models** folder. To create a new model just use *slush meanjs*:
-
+Часто вы обнаружите необходимость просто создать одну модель Express. Sub-generator моделей Express поможет вам создать модель Express в папке **app / models**. Для создания новой модели просто используйте *slush meanjs*:
 
 ```
 $ slush meanjs:express-model <model-name>
 ```
 
-This will create a new empty model in the **app/models** folder and a test file in the **app/tests** folder.
+Это создаст новую пустую модель в папке **app / models** и тестовый файл в папке **app / tests**.
 
 
-**Note:** It is recommended you avoid naming your model in plural form and use a singular form instead. i.e article and not articles
-
-
+**Примечание:** Рекомендуется не называть свою модель во множественном числе и использовать вместо нее форму единственного числа. то есть статья, а не статьи
 
 ## Express Controller Sub-Generator
 
-Another recurring task is creating an empty Express controller. The Express controller sub-generator will help you with creating an Express controller in the **app/controllers** folder. To create a new controller just use *slush meanjs*:
-
+Еще одна повторяющаяся задача - создание пустого контроллера Express. Sub-generator контроллера Express поможет вам создать контроллер Express в папке **app / controllers**. Для создания нового контроллера просто используйте *slush meanjs*:
 
 ```
 $ slush meanjs:express-controller <controller-name>
 ```
 
-This will create a new empty controller in the **app/controllers** folder.
-
-
+Это создаст новый пустой контроллер в папке **app / controllers**.
 
 ## Express Routes Sub-Generator
 
-To make HTTP requests to your controller methods you will need to use a routing file in the **app/routes** folder. The Express routes sub-generator will help you to add a new empty routes file. To create a new routes file execute this *slush meanjs* command:
-
+Для отправки HTTP-запросов к методам вашего контроллера вам потребуется использовать файл маршрутизации в папке **app / rout**. Sub-generator экспресс-маршрутов поможет вам добавить новый пустой файл маршрутов. Чтобы создать новый файл маршрутов, выполните команду *slush meanjs*:
 
 ```
 $ slush meanjs:express-route <route-name>
 ```
 
-This will create a new empty route file in the **app/routes** folder.
-
+Это создаст новый пустой файл маршрута в папке **app / routes**.
 
 ## Express Test Sub-Generator
 
-Your MEAN application comes pre-bundled with the Mocha testing framework. To test your Express models you’ll need to create a new test file, which Mocha will use while running tests. For this purpose we provided you with the Express test sub-generator. Creating a new Express test is easy, just execute this command:
-
+Ваше MEAN-приложение поставляется в комплекте с инфраструктурой тестирования Mocha. Чтобы протестировать ваши модели Express, вам нужно создать новый тестовый файл, который Mocha будет использовать при выполнении тестов. Для этого мы предоставили вам тестовый sub-generator Express. Создать новый экспресс-тест очень просто, просто выполните эту команду:
 
 ```
 $ slush meanjs:express-test <model-name>
 ```
 
-This will create a test file for your Express model, and if the sub-generator doesn’t find the specified model, it will create one for you.
+Это создаст тестовый файл для вашей модели Express, и если sub-generator не найдет указанную модель, он создаст его для вас.
 
 
-**Don’t forget!** You're suppose to pass the model name as an argument. 
+**Не забывайте!** Вы должны передать имя модели в качестве аргумента.
 
+## Знакомство со Slush
 
-## Getting To Know Slush
+Slush - это инструмент, который использует Gulp для строительных проектов.
 
-Slush is a tool that uses Gulp for project scaffolding.
+Slush не содержит ничего «из коробки», кроме возможности найти установленные генераторы Slush и запускать их с отрывом.
 
-Slush does not contain anything "out of the box", except the ability to locate installed slush generators and to run them with liftoff.
-
-To find out more about Slush, check out the [documentation](https://github.com/klei/slush).
+Чтобы узнать больше о Slush, ознакомьтесь с [documentation] (https://github.com/klei/slush).
 
 ## Contributing
 
 See the [CONTRIBUTING Guidelines](https://github.com/arvindr21/slush-meanjs/blob/master/CONTRIBUTING.md)
 
 ## Support
-If you have any problem or suggestion please open an issue [here](https://github.com/arvindr21/slush-meanjs/issues).
+Если у вас есть какие-либо проблемы или предложения, пожалуйста, откройте вопрос [here](https://github.com/arvindr21/slush-meanjs/issues).
 
-## License 
+## License
 
-The MIT License
+Лицензия MIT
 
 Copyright (c) 2014, Arvind Ravulavaru
 
-Permission is hereby granted, free of charge, to any person
-obtaining a copy of this software and associated documentation
-files (the "Software"), to deal in the Software without
-restriction, including without limitation the rights to use,
-copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following
-conditions:
+Таким образом, разрешение предоставляется бесплатно любому лицу
+получение копии этого программного обеспечения и сопутствующей документации файлы («Программное обеспечение»), чтобы иметь дело с Программным обеспечением без ограничение, включая, помимо прочего, права на использование, копировать, изменять, объединять, публиковать, распространять, сублицензировать и / или продавать копии Программного обеспечения и разрешать лицам, которым Программное обеспечение предоставляется для этого при условии следующего условия:
 
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
+Вышеуказанное уведомление об авторских правах и это разрешение должно быть включены во все копии или существенные части Программного обеспечения.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
+ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ ПРЕДОСТАВЛЯЕТСЯ «КАК ЕСТЬ», БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ, ЯВНЫЕ ИЛИ ПОДРАЗУМЕВАЕМЫЕ, ВКЛЮЧАЯ, НО НЕ ОГРАНИЧЕННЫЕ ГАРАНТИИ ИЗДЕЛИЯ, ПРИГОДНОСТИ ДЛЯ ОСОБЫХ ЦЕЛЕЙ И
+НЕПОСЯГАТЕЛЬСТВА. НИ В КОЕМ СЛУЧАЕ НЕ ДОЛЖНЫ АВТОРЫ ИЛИ АВТОРСКИЕ ПРАВА
+Держатели несут ответственность за любые претензии, ущерб или другую ответственность, В ДЕЙСТВИИ ДЕЙСТВИЯ ДОГОВОРА, ИСПЫТАНИЯ ИЛИ ИНОГО
+ОТ, ИЗ ИЛИ В СВЯЗИ С ПРОГРАММНЫМ ОБЕСПЕЧЕНИЕМ ИЛИ ИСПОЛЬЗОВАНИЕМ
+ДРУГИЕ СДЕЛКИ В ПРОГРАММНОМ ОБЕСПЕЧЕНИИ.
